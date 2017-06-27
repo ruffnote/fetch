@@ -1,6 +1,11 @@
 (function(self) {
   'use strict';
 
+  const isEdge = /Edge\//.test(navigator.userAgent);
+  if (isEdge) {
+    self.fetch = undefined;
+  }
+
   if (self.fetch) {
     return
   }
